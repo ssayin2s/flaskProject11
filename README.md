@@ -1,5 +1,5 @@
 # Açık kaynak kodlu yazılımlar2
-burada yine python diliyle bir flask uygulaması kullanılmakta,docker compose kullanıldı.
+Docker compose file kullanılarak oluşturulmuş python ve flask kullanılan projedir.
 Bir kapsayıcı oluşturmak ve çalıştırmak için Docker Compose dosyası, bir JSON dosyası ve Python kodu:
 
 Aşağıdaki biçimde data.json adında bir JSON dosyanız olduğunu varsayarsak:
