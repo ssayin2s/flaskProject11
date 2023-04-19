@@ -1,9 +1,9 @@
-# Açık kaynak kodlu yazılımlar
-docker file kullanılarak oluşturulmuş python ve flask kullanılan projedir
-Bu uygulama, /api/sum konumunda POST isteklerini kabul eden ve iki sayının toplamını JSON biçiminde döndüren tek bir yol tanımlar.
+# Açık kaynak kodlu yazılımlar2
+burada yine python diliyle bir flask uygulaması kullanılmakta,docker compose kullanıldı.
+Bir kapsayıcı oluşturmak ve çalıştırmak için Docker Compose dosyası, bir JSON dosyası ve Python kodu:
 
-/api/sum yoluna bir istek yapıldığında sum() işlevi çağrılır. İstek gövdesinden JSON verilerini almak için request.get_json()'u kullanır, JSON verilerinden num1 ve num2 değerlerini çıkarır, sonucu elde etmek için bunları bir araya toplar ve jsonify() kullanarak sonucu bir JSON yanıtında döndürür.
+Aşağıdaki biçimde data.json adında bir JSON dosyanız olduğunu varsayarsak:
+Ve data.json dosyasını okuyan ve içeriğini bir JSON yanıtı olarak döndüren app.py adlı bir Flask uygulaması:
+Bu Compose dosyası, app adlı tek bir hizmeti tanımlar. Hizmet, oluşturma bağlamı olarak geçerli dizindeki (.) Dockerfile'ı kullanan hizmet için bir görüntü oluşturmak üzere oluşturma seçeneğini kullanır. Birimler seçeneği, geçerli dizini (.) kapsayıcı içindeki /app dizinine bağlamak için kullanılır. Bağlantı noktaları seçeneği, ana bilgisayardaki bağlantı noktası 5000'i kapsayıcıdaki bağlantı noktası 5000 ile eşlemek için kullanılır.
 
-Bu, my-flask-app görüntüsüne dayalı yeni bir kap başlatacak ve kapsayıcıdaki 5000 bağlantı noktasını ana makinenizdeki 5000 bağlantı noktasına eşleyecektir. Artık web tarayıcınızda http://localhost:5000/ adresine giderek Flask uygulamasına erişebilmelisiniz.
-
-Bu kadar! Artık Flask uygulamanızı Docker ile konteynerize ettiniz.
+docker-compose build komutu, uygulama hizmeti için Docker görüntüsünü oluşturur. docker-compose up komutu, kabı başlatacak ve Flask uygulamasını kabın içinde çalıştıracaktır. Bu, data.json dosyasını okuyacak ve web tarayıcınızda http://localhost:5000'e gittiğinizde içeriğini bir JSON yanıtı olarak döndürecektir.
